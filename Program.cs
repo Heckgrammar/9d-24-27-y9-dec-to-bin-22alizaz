@@ -30,11 +30,12 @@ namespace Y9_DEC_TO_BIN_SKELETON
             string binarynum = "";
             Console.WriteLine("type in your integer");
             int userint = Convert.ToInt32(Console.ReadLine());
-            while (userint!=0 || userint!=-1)
+            while (userint!= 0 || userint != -1)
             {
                 userint = userint / 2;
                 if (userint % 2 == 0 )
                 {
+                    
                     binarynum = "1" + binarynum;
                     Console.WriteLine(binarynum);
                 } else
@@ -57,5 +58,6 @@ namespace Y9_DEC_TO_BIN_SKELETON
 
             return result; //REMOVE THE RED LINE!
         }
+       */
     }
 }
