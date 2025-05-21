@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,37 +28,40 @@ namespace Y9_DEC_TO_BIN_SKELETON
                 binarynum = binarynum + "1"
             OUTPUT !binarynum
             */
-            string binarynum = "";
-            Console.WriteLine("type in your integer");
-            int userint = Convert.ToInt32(Console.ReadLine());
-            while (userint!= 0 || userint != -1)
-            {
-                userint = userint / 2;
-                if (userint % 2 == 0 )
-                {
-                    
-                    binarynum = "1" + binarynum;
-                    Console.WriteLine(binarynum);
-                } else
-                {
-                    binarynum = "0" + binarynum;
-                }
-            }
-            Console.WriteLine(binarynum);
-            //WRITE A CALL TO YOUR NUMBER CONVERSION FUNCTION HERE
             
+            //WRITE A CALL TO YOUR NUMBER CONVERSION FUNCTION HERE
+            static string numberConverter()
+            {
+                            string binarynum = "";
+                            Console.WriteLine("type in your integer");
+                            int userint = Convert.ToInt32(Console.ReadLine());
+                            while (userint > 0)
+                            {
+                                if (userint % 2 == 0)
+                                {
+                                    binarynum = "0" + binarynum;
+                                }
+                                else
+                                {
+                                    binarynum = "1" + binarynum;
+                                }
+                                userint = userint / 2;
+                            }
+                            Console.WriteLine(binarynum);
+
+            }
             
         }
 
         // LET'S USE THE 'STRUCTURED APPROACH' TO PROGRAMMING...A QUICK INTRODUCTION TO SUBBROUTINES(functions and procedures)...a.k.a. 'methods' in C#
         //static void means the function will not return a value so it does not need a data type 
         //...this function DOES return a value so the method must have a data type
-       /* static string numberConversion(int number, int numberbase)
+        static string numberConversion(int number, int numberbase)
         {
             //CODE GOES HERE
 
             return result; //REMOVE THE RED LINE!
         }
-       */
+       
     }
 }
