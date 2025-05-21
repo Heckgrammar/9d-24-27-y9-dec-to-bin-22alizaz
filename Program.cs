@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +17,32 @@ namespace Y9_DEC_TO_BIN_SKELETON
             int myStringAsInt = Convert.ToInt32(myString); //watch me cast from string to int
 
             //MAIN CHALLENGE: WRITE A PROGRAM TO CONVERT ANY INTEGER TO ITS EQUIVALENT BINARY NUMBER
+            /*
+            Start
+            string binarynum;
+            OUTPUT "type in integer"
+            int userint = INPUT
+            while userint !=0
+                userint = userint/2
+                binarynum = binarynum + "1"
+            OUTPUT !binarynum
+            */
+            string binarynum = "";
+            Console.WriteLine("type in your integer");
+            int userint = Convert.ToInt32(Console.ReadLine());
+            while (userint!=0 || userint!=-1)
+            {
+                userint = userint / 2;
+                if (userint % 2 == 0 )
+                {
+                    binarynum = "1" + binarynum;
+                    Console.WriteLine(binarynum);
+                } else
+                {
+                    binarynum = "0" + binarynum;
+                }
+            }
+            Console.WriteLine(binarynum);
             //WRITE A CALL TO YOUR NUMBER CONVERSION FUNCTION HERE
             
             
@@ -24,7 +51,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
         // LET'S USE THE 'STRUCTURED APPROACH' TO PROGRAMMING...A QUICK INTRODUCTION TO SUBBROUTINES(functions and procedures)...a.k.a. 'methods' in C#
         //static void means the function will not return a value so it does not need a data type 
         //...this function DOES return a value so the method must have a data type
-        static string numberConversion(int number, int numberbase)
+       /* static string numberConversion(int number, int numberbase)
         {
             //CODE GOES HERE
 
